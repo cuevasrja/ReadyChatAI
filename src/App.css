@@ -1,38 +1,84 @@
+:root{
+  --primary-color: #0b2944;
+  --secondary-color: #294c74;
+  --tertiary-color: #35475b;
+  --font-color: #f5f5f5;
+  --alternative-font-color: #ffe599;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: var(--primary-color);
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--font-color);
 }
 
-.App-link {
-  color: #61dafb;
+.App-header h1 {
+  font-size: 3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-header h1 span {
+  color: var(--alternative-font-color);
+}
+
+#chat {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 10px;
+  padding: 0 10%;
+  background-color: var(--primary-color);
+  overflow-y: auto;
+}
+
+#chat::-webkit-scrollbar {
+  width: 10px;
+  height: 7px;
+  background: transparent;
+}
+
+#chat::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+#chat::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+#chat li {
+  list-style-type: none;
+  max-width: 60%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#chat li .number{
+  font-size: .75rem;
+  color: var(--alternative-font-color);
+}
+
+#chat .reply {
+  padding: 5px;
+  border-radius: 5px;
+  font-size: .75rem;
+  background-color: var(--primary-color);
+}
+
+#chat .user {
+  text-align: right;
+  background-color: var(--secondary-color);
+  margin: 5px 0 5px auto;
+}
+
+#chat .bot {
+  text-align: left;
+  background-color: var(--tertiary-color);
+  margin: 5px auto 5px 0;
 }
